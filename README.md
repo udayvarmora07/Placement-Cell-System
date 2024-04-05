@@ -34,9 +34,9 @@ Welcome to the Placement Cell System project! This system aims to streamline the
 
 ## Technologies Used
 
-Node.js
-Express.js
-MongoDB
-EJS (Embedded JavaScript) for templating
-nodemailer for sending emails
-Bootstrap for front-end design
+Node.js<br>
+Express.js<br>
+MongoDB<br>
+EJS (Embedded JavaScript) for templating<br>
+nodemailer for sending emails<br>
+Bootstrap for front-end design<br>
