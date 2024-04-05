@@ -12,7 +12,7 @@ Welcome to the Placement Cell System project! This system aims to streamline the
 ->Document Upload: Students can upload relevant documents like resumes, certificates, etc.<br>
 ->Password Reset: Students can reset their password in case they forget it.<br>
 ->Job Application: Students can apply for jobs listed on the platform.<br>
-->Job Portal: Students can view all available job listings.<br><br>
+->Job Portal: Students can view all available job listings.<br>
 ->Logout: Students can securely log out of their accounts.<br><br>
 
 ### For Department Placement Coordinator (DPC):
