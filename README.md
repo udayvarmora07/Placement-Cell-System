@@ -24,7 +24,7 @@ Welcome to the Placement Cell System project! This system aims to streamline the
 
 ->Logout: Users can securely log out of their accounts.<br><br>
 
-## How to Run this Project:<br><br>
+## How to Run this Project:<br>
 
 1)Clone this repository to your local machine.<br>
 2)Install dependencies using npm install.<br>
