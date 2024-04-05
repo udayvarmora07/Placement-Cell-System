@@ -13,16 +13,14 @@ Welcome to the Placement Cell System project! This system aims to streamline the
 ->Password Reset: Students can reset their password in case they forget it.<br>
 ->Job Application: Students can apply for jobs listed on the platform.<br>
 ->Job Portal: Students can view all available job listings.<br><br>
+->Logout: Students can securely log out of their accounts.<br><br>
 
 ### For Department Placement Coordinator (DPC):
 
 ->Job Management: DPC can add new job listings, edit existing ones, and delete outdated listings.<br>
 ->Email Notifications: When a new job is added, an email notification is sent to all registered students.<br>
 ->Interview Management: DPC can schedule and manage interviews for job applicants.<br>
-
-### General:
-
-->Logout: Users can securely log out of their accounts.<br><br>
+->Logout: DPC can securely log out of their accounts.<br><br>
 
 ## How to Run this Project:<br>
 
