@@ -1,0 +1,269 @@
+<% if (locals.user) {%>
+<div class="container mt-4 col-md-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="btn-group d-flex" role="group" aria-label="Basic example">
+        <button
+          type="button"
+          class="btn btn-secondary flex-fill"
+          onclick="location.href='/student/edit-education-details/<%= educationDetails._id %>'"
+        >
+          Personal Details
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary flex-fill"
+          onclick="location.href='/student/edit-education-details/<%= educationDetails._id %>'"
+        >
+          Education Details
+        </button>
+      </div>
+    </div>
+  </div>
+  <h4 class="pt-3">Student Education Details</h4>
+
+  <form
+    class="row g-3 mt-1 border border-dark rounded p-2"
+    style="--bs-border-opacity: 0.5"
+    action="/student/editEducationDetails/<%= educationDetails._id %>"
+    method="POST"
+  >
+    <h5 class="my-1 text-primary">10th details -></h5>
+
+    <div class="col-12 my-1">
+      <label for="school-name" class="form-label">School Name</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter School name"
+        id="tenthSchoolName"
+        name="tenthSchoolName"
+        value="<%= educationDetails.tenthSchoolName %>"
+      />
+    </div>
+
+    <div class="col-12">
+      <label for="board" class="form-label">Board</label>
+      <select class="form-select" id="tenthBoard" name="tenthBoard" required>
+        <option selected>Choose...</option>
+        <option value="GSEB" <%= educationDetails.tenthBoard === 'GSEB' ? 'selected' : '' %>>GSEB</option>
+        <option value="CBSE" <%= educationDetails.tenthBoard === 'CBSE' ? 'selected' : '' %>>CBSE</option>
+        <option value="ICSE" <%= educationDetails.tenthBoard === 'ICSE' ? 'selected' : '' %>>ICSE</option>
+        <option value="Other" <%= educationDetails.tenthBoard === 'Other' ? 'selected' : '' %>>Other</option>
+      </select>
+    </div>
+
+    <div class="col-12">
+      <label for="passing-year" class="form-label">Passing Year</label>
+      <select
+        class="form-select"
+        id="tenthPassingYear"
+        name="tenthPassingYear"
+        required
+      >
+        <option selected>Choose...</option>
+        <option value="2018" <%= educationDetails.tenthPassingYear === '2018' ? 'selected' : '' %>>2018</option>
+        <option value="2019" <%= educationDetails.tenthPassingYear === '2019' ? 'selected' : '' %>>2019</option>
+        <option value="2020" <%= educationDetails.tenthPassingYear === '2020' ? 'selected' : '' %>>2020</option>
+        <option value="2021" <%= educationDetails.tenthPassingYear === '2021' ? 'selected' : '' %>>2021</option>
+      </select>
+    </div>
+
+    <div class="col-12">
+      <label for="percentage" class="form-label">Percentage</label>
+      <input
+        type="number"
+        class="form-control"
+        placeholder="Enter percentage"
+        id="tenthPercentage"
+        name="tenthPercentage"
+        min="0"
+        max="100"
+        step="0.01"
+        value="<%= educationDetails.tenthPercentage %>"
+        required
+      />
+    </div>
+
+    <h5 class="my-1 text-primary mt-3">12th details -></h5>
+
+    <div class="col-12">
+      <label for="school-name" class="form-label">School Name</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter School name"
+        id="twelfthSchoolName"
+        name="twelfthSchoolName"
+        value="<%= educationDetails.twelfthSchoolName %>"
+        required
+      />
+    </div>
+
+    <div class="col-12">
+      <label for="board" class="form-label">Board</label>
+      <select
+        class="form-select"
+        id="twelfthBoard"
+        name="twelfthBoard"
+        required
+      >
+        <option selected>Choose...</option>
+        <option value="GSEB" <%= educationDetails.twelfthBoard === 'GSEB' ? 'selected' : '' %>>GSEB</option>
+        <option value="CBSE" <%= educationDetails.twelfthBoard === 'CBSE' ? 'selected' : '' %>>CBSE</option>
+        <option value="ICSE" <%= educationDetails.twelfthBoard === 'ICSE' ? 'selected' : '' %>>ICSE</option>
+        <option value="Other" <%= educationDetails.twelfthBoard === 'Other' ? 'selected' : '' %>>Other</option>
+      </select>
+    </div>
+
+    <div class="col-12">
+      <label for="passing-year" class="form-label">Passing Year</label>
+      <select
+        class="form-select"
+        id="twelfthPassingYear"
+        name="twelfthPassingYear"
+        required
+      >
+        <option selected>Choose...</option>
+        <option value="2020" <%= educationDetails.twelfthPassingYear === '2020' ? 'selected' : '' %>>2020</option>
+        <option value="2021" <%= educationDetails.twelfthPassingYear === '2021' ? 'selected' : '' %>>2021</option>
+        <option value="2022" <%= educationDetails.twelfthPassingYear === '2022' ? 'selected' : '' %>>2022</option>
+        <option value="2023" <%= educationDetails.twelfthPassingYear === '2023' ? 'selected' : '' %>>2023</option>
+      </select>
+    </div>
+
+    <div class="col-12">
+      <label for="percentage" class="form-label">Percentage</label>
+      <input
+        type="number"
+        class="form-control"
+        placeholder="Enter percentage"
+        id="twelfthPercentage"
+        name="twelfthPercentage"
+        min="0"
+        max="100"
+        step="0.01"
+        value="<%= educationDetails.twelfthPercentage %>"
+        required
+      />
+    </div>
+
+    <h5 class="my-1 text-primary mt-3">B.Tech details -></h5>
+
+    <div class="col-12">
+      <label for="cgpa" class="form-label">CGPA</label>
+      <div class="row">
+        <div class="col-md-4">
+          <input
+            type="number"
+            class="form-control mb-3"
+            placeholder="Sem-1"
+            id="sem1"
+            name="sem1"
+            min="0"
+            max="10"
+            step="0.01"
+            value="<%= educationDetails.sem1 %>"
+            required
+          />
+        </div>
+        <div class="col-md-4">
+          <input
+            type="number"
+            class="form-control mb-3"
+            placeholder="Sem-2"
+            id="sem2"
+            name="sem2"
+            min="0"
+            max="10"
+            step="0.01"
+            value="<%= educationDetails.sem2 %>"
+            required
+          />
+        </div>
+        <div class="col-md-4">
+          <input
+            type="number"
+            class="form-control mb-3"
+            placeholder="Sem-3"
+            id="sem3"
+            name="sem3"
+            min="0"
+            max="10"
+            step="0.01"
+            value="<%= educationDetails.sem3 %>"
+            required
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <input
+            type="number"
+            class="form-control mb-3"
+            placeholder="Sem-4"
+            id="sem4"
+            name="sem4"
+            min="0"
+            max="10"
+            step="0.01"
+            value="<%= educationDetails.sem4 %>"
+            required
+          />
+        </div>
+        <div class="col-md-4">
+          <input
+            type="number"
+            class="form-control mb-3"
+            placeholder="Sem-5"
+            id="sem5"
+            name="sem5"
+            min="0"
+            max="10"
+            step="0.01"
+            value="<%= educationDetails.sem5 %>"
+            required
+          />
+        </div>
+        <div class="col-md-4">
+          <input
+            type="number"
+            class="form-control mb-3"
+            placeholder="Sem-6"
+            id="sem6"
+            name="sem6"
+            min="0"
+            max="10"
+            step="0.01"
+            value="<%= educationDetails.sem6 %>"
+            required
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <label for="backlogStatus" class="form-label"
+        >Do you have any backlog?</label
+      >
+      <select
+        class="form-select"
+        id="backlogStatus"
+        name="backlogStatus"
+        required
+      >
+        <option selected disabled>Choose...</option>
+        <option value="yes" <%= educationDetails.backlogStatus === 'yes' ? 'selected' : '' %>>yes</option>
+        <option value="no" <%= educationDetails.backlogStatus === 'no' ? 'selected' : '' %>>no</option>
+      </select>
+    </div>
+
+    <div class="col-12">
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end pe-4">
+        <button type="submit" class="btn btn-primary">Update</button>
+      </div>
+    </div>
+
+    <%} %>
+  </form>
+</div>

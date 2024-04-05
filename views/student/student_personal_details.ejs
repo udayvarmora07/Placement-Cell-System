@@ -1,0 +1,130 @@
+<% if (locals.user) {%>
+    <div class="container mt-4 col-md-4">
+      <div class="row">
+        <div class="col-12">
+          <div class="btn-group d-flex" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-primary flex-fill" onclick="location.href='/student/add-student-personal-details'">Personal Details</button>
+            <button type="button" class="btn btn-secondary flex-fill" onclick="location.href='/student/add-student-education-details'">Education Details</button>
+            <button type="button" class="btn btn-secondary flex-fill" onclick="location.href='/student/add-student-document-upload'">Document Upload</button>
+          </div>
+        </div>
+      </div>
+    <h4 class="pt-3">Student Personal Details</h4>
+  
+    <form class="row g-3 mt-1 border border-dark rounded p-2" 
+     style="--bs-border-opacity: 0.5" action="/student/createStudentPersonalDetails" method="POST">
+  
+      <div class="col-12">
+        <label for="name" class="form-label">Full Name</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter name"
+          id="fullName"
+          name="fullName"
+          required
+        />
+      </div>
+
+      <div class="col-12">
+        <label for="college id" class="form-label">College ID</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter College ID"
+          id="collegeId"
+          name="collegeId"
+          required
+        />
+      </div>
+
+      <div class="col-12">
+        <label for="program" class="form-label">Program</label>
+        <select class="form-select" id="program" name="program" required>
+            <option selected>Choose...</option>
+            <option value="Bachelor">Bachelor</option>
+        </select>
+      </div>
+
+      <div class="col-12">
+        <label for="branch" class="form-label">Branch</label>
+        <select class="form-select" id="branch" name="branch" required>
+            <option selected>Choose...</option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="Information Technology">Information Technology</option>
+            <option value="Chemical Engineering">Chemical Engineering</option>
+            <option value="Electrical and Communication Engineering">Electrical and Communication Engineering</option>
+            <option value="Mechanical Engineering">Mechanical Engineering</option>
+            <option value="Civil Engineering">Civil Engineering</option>
+            <option value="Instrumentation and Control Engineering">Instrumentation and Control Engineering</option>
+        </select>
+      </div>
+
+      <div class="col-12">
+        <label for="enrollment-year" class="form-label">Enrollment Year</label>
+        <select class="form-select" id="enrollmentYear" name="enrollmentYear" required>
+            <option selected>Choose...</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+        </select>
+      </div>
+
+      <div class="col-12">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          placeholder="Enter Email"
+          id="email"
+          name="email"
+          required
+        />
+      </div>
+
+      <div class="col-12">
+        <label for="mobile-number" class="form-label">Mobile Number</label>
+        <input
+          type="number"
+          class="form-control"
+          placeholder="Enter Mobile Number"
+          id="moNumber"
+          name="moNumber"
+          required
+        />
+      </div>
+
+      <div class="col-12">
+        <label for="gender" class="form-label">Gender</label>
+        <select class="form-select" id="gender" name="gender" required>
+            <option selected>Choose...</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="col-12">
+        <label for="birth-date" class="form-label">Birth Date</label>
+        <input
+          type="date"
+          class="form-control"
+          id="birthDate"
+          name="birthDate"
+          required
+        />
+      </div>
+
+      <div class="col-12">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end pe-4">
+            <button type="submit" class="btn btn-primary">Next</button>
+        </div>
+    </div>
+  
+    </form>
+  </div>
+  </div>
+  
+  <%} %>
+  

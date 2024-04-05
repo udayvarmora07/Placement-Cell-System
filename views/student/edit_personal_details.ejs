@@ -1,0 +1,134 @@
+<% if (locals.user) {%>
+    <div class="container mt-4 col-md-4">
+      <div class="row">
+        <div class="col-12">
+          <div class="btn-group d-flex" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-primary flex-fill" onclick="location.href='/student/edit-personal-details/<%= personalDetails._id %>'">Personal Details</button>
+            <button type="button" class="btn btn-secondary flex-fill" onclick="location.href='/student/edit-personal-details/<%= personalDetails._id %>'">Education Details</button>
+          </div>
+        </div>
+      </div>
+    <h4 class="pt-3">Student Personal Details</h4>
+  
+    <form class="row g-3 mt-1 border border-dark rounded p-2" 
+     style="--bs-border-opacity: 0.5" action="/student/editPersonalDetails/<%= personalDetails._id %>" method="POST">
+  
+      <div class="col-12">
+        <label for="name" class="form-label">Full Name</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter name"
+          id="fullName"
+          name="fullName"
+          value="<%= personalDetails.fullName %>"
+          required
+        />
+      </div>
+
+      <div class="col-12">
+        <label for="college id" class="form-label">College ID</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter College ID"
+          id="collegeId"
+          name="collegeId"
+          value="<%= personalDetails.collegeId %>"
+          required
+        />
+      </div>
+
+      <div class="col-12">
+        <label for="program" class="form-label">Program</label>
+        <select class="form-select" id="program" name="program" required>
+            <option selected>Choose...</option>
+            <option value="Bachelor" <%= personalDetails.program === 'Bachelor' ? 'selected' : '' %>>Bachelor</option>
+        </select>
+      </div>
+
+      <div class="col-12">
+        <label for="branch" class="form-label">Branch</label>
+        <select class="form-select" id="branch" name="branch" required>
+            <option selected>Choose...</option>
+            <option value="Computer Science" <%= personalDetails.branch === 'Computer Science' ? 'selected' : '' %>>Computer Science</option>
+            <option value="Information Technology" <%= personalDetails.branch === 'Information Technology' ? 'selected' : '' %>>Information Technology</option>
+            <option value="Chemical Engineering" <%= personalDetails.branch === 'Chemical Engineering' ? 'selected' : '' %>>Chemical Engineering</option>
+            <option value="Electrical and Communication Engineering" <%= personalDetails.branch === 'Electrical and Communication Engineering' ? 'selected' : '' %>>Electrical and Communication Engineering</option>
+            <option value="Mechanical Engineering" <%= personalDetails.branch === 'Mechanical Engineering' ? 'selected' : '' %>>Mechanical Engineering</option>
+            <option value="Civil Engineering" <%= personalDetails.branch === 'Civil Engineering' ? 'selected' : '' %>>Civil Engineering</option>
+            <option value="Instrumentation and Control Engineering" <%= personalDetails.branch === 'Instrumentation and Control Engineering' ? 'selected' : '' %>>Instrumentation and Control Engineering</option>
+        </select>
+      </div>
+
+      <div class="col-12">
+        <label for="enrollment-year" class="form-label">Enrollment Year</label>
+        <select class="form-select" id="enrollmentYear" name="enrollmentYear" required>
+            <option selected>Choose...</option>
+            <option value="2020" <%= personalDetails.enrollmentYear === '2020' ? 'selected' : '' %>>2020</option>
+            <option value="2021" <%= personalDetails.enrollmentYear === '2021' ? 'selected' : '' %>>2021</option>
+            <option value="2022" <%= personalDetails.enrollmentYear === '2022' ? 'selected' : '' %>>2022</option>
+            <option value="2023" <%= personalDetails.enrollmentYear === '2023' ? 'selected' : '' %>>2023</option>
+        </select>
+      </div>
+
+      <div class="col-12">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          placeholder="Enter Email"
+          id="email"
+          name="email"
+          value="<%= personalDetails.email %>"
+          required
+        />
+      </div>
+
+      <div class="col-12">
+        <label for="mobile-number" class="form-label">Mobile Number</label>
+        <input
+          type="number"
+          class="form-control"
+          placeholder="Enter Mobile Number"
+          id="moNumber"
+          name="moNumber"
+          value="<%= personalDetails.moNumber %>"
+          required
+        />
+      </div>
+
+      <div class="col-12">
+        <label for="gender" class="form-label">Gender</label>
+        <select class="form-select" id="gender" name="gender" required>
+            <option selected>Choose...</option>
+            <option value="Male" <%= personalDetails.gender === 'Male' ? 'selected' : '' %>>Male</option>
+            <option value="Female" <%= personalDetails.gender === 'Female' ? 'selected' : '' %>>Female</option>
+            <option value="Other" <%= personalDetails.gender === 'Other' ? 'selected' : '' %>>Other</option>
+        </select>
+      </div>
+
+      <div class="col-12">
+        <label for="birth-date" class="form-label">Birth Date</label>
+        <input
+          type="date"
+          class="form-control"
+          id="birthDate"
+          name="birthDate"
+          value="<%= personalDetails.birthDate ? personalDetails.birthDate.toISOString().substring(0, 10) : '' %>"
+          required
+        />
+      </div>
+
+      <div class="col-12">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end pe-4">
+            <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+    </div>
+  
+    </form>
+  </div>
+  </div>
+  
+  <%} %>
+  

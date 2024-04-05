@@ -1,0 +1,41 @@
+<% uploadedDocuments.forEach((document) => { %>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title"><%= document.filename %></h5>
+    <strong>Content Type:</strong> <%= document.contentType %><br />
+    <strong>Size:</strong> <%= document.size %> bytes<br />
+    <% if (document.contentType && document.contentType.startsWith('image')) {
+    %>
+    <!-- Display image -->
+    <img
+      src="data:<%= document.contentType %>;base64,<%= document.data ? document.data.toString('base64') : '' %>"
+      alt="<%= document.filename %>"
+    />
+    <% } else if (document.contentType === 'application/pdf') { %>
+    <!-- Display PDF -->
+    <object
+      data="data:<%= document.contentType %>;base64,<%= document.data ? document.data.toString('base64') : '' %>"
+      type="<%= document.contentType %>"
+      width="100%"
+      height="600px"
+    >
+      <p>
+        Your browser does not support PDFs.
+        <a
+          href="data:<%= document.contentType %>;base64,<%= document.data ? document.data.toString('base64') : '' %>"
+          download="<%= document.filename %>"
+          >Download PDF</a
+        >
+      </p>
+    </object>
+    <% } else { %>
+    <!-- Display generic download link -->
+    <a
+      href="data:<%= document.contentType %>;base64,<%= document.data ? document.data.toString('base64') : '' %>"
+      download="<%= document.filename %>"
+      >Download</a
+    >
+    <% } %>
+  </div>
+</div>
+<% }); %>

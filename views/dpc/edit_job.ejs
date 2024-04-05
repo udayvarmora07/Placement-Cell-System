@@ -1,0 +1,114 @@
+<% if (locals.user) { %>
+<div class="container mt-4 col-md-4">
+  <h4>Edit Job</h4>
+
+  <form
+    class="row g-3 mt-1 border border-dark rounded p-2"
+    style="--bs-border-opacity: 0.5"
+    action="/dpc/editJob/<%= job._id %>"
+    method="POST"
+  >
+    <div class="col-12">
+      <label for="company" class="form-label">Company</label>
+      <input
+        type="text"
+        class="form-control"
+        id="companyName"
+        name="companyName"
+        value="<%= job.companyName %>"
+        required
+      />
+    </div>
+
+    <div class="col-12">
+      <label for="job-title" class="form-label">Job Title</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter job title"
+        id="jobTitle"
+        name="jobTitle"
+        value="<%= job.jobTitle %>"
+        required
+      />
+    </div>
+
+    <div class="col-12">
+      <label for="qualification" class="form-label">Qualification</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter qualification"
+        id="qualification"
+        name="qualification"
+        value="<%= job.qualification %>"
+        required
+      />
+    </div>
+
+    <div class="col-12">
+      <label for="cgpa" class="form-label">CGPA</label>
+      <input
+        type="number"
+        step="0.01"
+        class="form-control"
+        placeholder="Enter cgpa"
+        id="cgpa"
+        name="cgpa"
+        value="<%= job.cgpa %>"
+      />
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="allowBacklogStudent" name="allowBacklogStudent" <% if(job.allowBacklogStudent) { %> checked <% } %> value="true">
+      <label class="form-check-label" for="allowBacklogStudent">
+          Allow Backlog Student
+      </label>
+  </div>  
+
+    <div class="col-12">
+      <label for="package" class="form-label">Package</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter package"
+        id="package"
+        name="package"
+        value="<%= job.package %>"
+        required
+      />
+    </div>
+
+    <div class="col-12">
+      <label for="last-date" class="form-label">Last Date</label>
+      <input
+        type="date"
+        class="form-control"
+        id="lastDate"
+        name="lastDate"
+        value="<%= job.lastDate %>"
+        required
+      />
+    </div>
+
+    <div class="col-12">
+      <label for="jobDescription" class="form-label">Description</label>
+      <textarea
+        class="form-control"
+        placeholder="Enter description"
+        id="jobDescription"
+        name="jobDescription"
+        rows="4"
+        cols="50"
+        required
+      >
+<%= job.jobDescription %></textarea
+      >
+    </div>
+
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Update job</button>
+    </div>
+  </form>
+</div>
+<% } %>

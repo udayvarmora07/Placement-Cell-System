@@ -1,0 +1,110 @@
+<% if (locals.user) {%>
+    <div class="container mt-4 col-md-4">
+    <h4>Add job</h4>
+  
+    <form class="row g-3 mt-1 border border-dark rounded p-2" 
+     style="--bs-border-opacity: 0.5" action="/dpc/createJob" method="POST">
+  
+      <div class="col-12">
+        <label for="company" class="form-label">Company</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter company name"
+          id="companyName"
+          name="companyName"
+          required
+        />
+      </div>
+
+      <div class="col-12">
+        <label for="job-title" class="form-label">Job Title</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter jo title"
+          id="jobTitle"
+          name="jobTitle"
+          required
+        />
+      </div>
+
+      <div class="col-12">
+        <label for="qualification" class="form-label">Qualification</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter qualification"
+          id="qualification"
+          name="qualification"
+          required
+        />
+      </div>
+
+      <div class="col-12">
+        <label for="cgpa" class="form-label">CGPA</label>
+        <input
+          type="number"
+          step="0.01"
+          class="form-control"
+          placeholder="Enter cgpa"
+          id="cgpa"
+          name="cgpa"
+        />
+      </div>
+
+      <div class="col-12">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="true" id="allowBacklogStudent" name="allowBacklogStudent">
+          <label class="form-check-label" for="allowBacklogStudent">
+            Allow Backlog Student
+          </label>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <label for="package" class="form-label">Package</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter Package"
+          id="package"
+          name="package"
+          required
+        />
+      </div>
+  
+      <div class="col-12">
+        <label for="last-date" class="form-label">Last Date</label>
+        <input
+          type="date"
+          class="form-control"
+          id="lastDate"
+          name="lastDate"
+          required
+        />
+      </div>
+  
+      <div class="col-12">
+        <label for="jobDescription" class="form-label">Description</label>
+        <textarea
+          class="form-control"
+          placeholder="Enter Description"
+          id="jobDescription"
+          name="jobDescription"
+          rows="4"
+          cols="50"
+          required
+        ></textarea>
+      </div>
+
+      <div class="col-12 ">
+        <button type="submit" class="btn btn-primary">Add job</button>
+      </div>
+  
+    </form>
+  </div>
+  </div>
+  
+  <%} %>
+  

@@ -1,0 +1,84 @@
+<% if (user) { %>
+<div class="container mt-5">
+  <!-- Personal Details -->
+  <% if (personalDetails && Object.keys(personalDetails).length > 0) { %>
+  <h2 class="mb-4">Personal Details</h2>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Full Name: <%= personalDetails.fullName %></h5>
+      <p class="card-text">College ID: <%= personalDetails.collegeId %></p>
+      <p class="card-text">Program: <%= personalDetails.program %></p>
+      <p class="card-text">Branch: <%= personalDetails.branch %></p>
+      <p class="card-text">
+        Enrollment Year: <%= personalDetails.enrollmentYear %>
+      </p>
+      <p class="card-text">Email: <%= personalDetails.email %></p>
+      <p class="card-text">Mobile Number: <%= personalDetails.moNumber %></p>
+      <p class="card-text">Gender: <%= personalDetails.gender %></p>
+      <p class="card-text">
+        Birth Date: <%= personalDetails.birthDate.toDateString() %>
+      </p>
+      <a
+        href="/student/edit-personal-details/<%= personalDetails._id %>"
+        class="btn btn-primary"
+        >Edit Personal Details</a
+      >
+    </div>
+  </div>
+  <% } else { %>
+  <p>No personal details found.</p>
+  <% } %>
+
+  <!-- Education Details -->
+  <% if (educationDetails && Object.keys(educationDetails).length > 0) { %>
+  <h2 class="mt-5 mb-4">Education Details</h2>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">10th Details</h5>
+      <p class="card-text">
+        School Name: <%= educationDetails.tenthSchoolName %>
+      </p>
+      <p class="card-text">Board: <%= educationDetails.tenthBoard %></p>
+      <p class="card-text">
+        Passing Year: <%= educationDetails.tenthPassingYear %>
+      </p>
+      <p class="card-text">
+        Percentage: <%= educationDetails.tenthPercentage %>
+      </p>
+
+      <h5 class="card-title mt-4">12th Details</h5>
+      <p class="card-text">
+        School Name: <%= educationDetails.twelfthSchoolName %>
+      </p>
+      <p class="card-text">Board: <%= educationDetails.twelfthBoard %></p>
+      <p class="card-text">
+        Passing Year: <%= educationDetails.twelfthPassingYear %>
+      </p>
+      <p class="card-text">
+        Percentage: <%= educationDetails.twelfthPercentage %>
+      </p>
+
+      <h5 class="card-title mt-4">B.Tech Details</h5>
+      <p class="card-text">Semester 1 CGPA: <%= educationDetails.sem1 %></p>
+      <p class="card-text">Semester 2 CGPA: <%= educationDetails.sem2 %></p>
+      <p class="card-text">Semester 3 CGPA: <%= educationDetails.sem3 %></p>
+      <p class="card-text">Semester 4 CGPA: <%= educationDetails.sem4 %></p>
+      <p class="card-text">Semester 5 CGPA: <%= educationDetails.sem5 %></p>
+      <p class="card-text">Semester 6 CGPA: <%= educationDetails.sem6 %></p>
+
+      <h5 class="card-title mt-4">Backlog Status</h5>
+      <p class="card-text">
+        Backlog Status: <%= educationDetails.backlogStatus %>
+      </p>
+      <a
+        href="/student/edit-education-details/<%= educationDetails._id %>"
+        class="btn btn-primary"
+        >Edit Education Details</a
+      >
+    </div>
+  </div>
+  <% } else { %>
+  <p>No education details found.</p>
+  <% } %>
+</div>
+<%} %>

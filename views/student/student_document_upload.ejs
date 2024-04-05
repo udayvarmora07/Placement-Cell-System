@@ -1,0 +1,64 @@
+<% if (locals.user) {%>
+<div class="container mt-4 col-md-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="btn-group d-flex" role="group" aria-label="Basic example">
+        <button
+          type="button"
+          class="btn btn-secondary flex-fill"
+          onclick="location.href='/student/add-student-personal-details'"
+        >
+          Personal Details
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary flex-fill"
+          onclick="location.href='/student/add-student-education-details'"
+        >
+          Education Details
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary flex-fill"
+          onclick="location.href='/student/add-student-document-upload'"
+        >
+          Document Upload
+        </button>
+      </div>
+    </div>
+  </div>
+  <h4 class="pt-3">Student Document Upload</h4>
+
+  <form
+    enctype="multipart/form-data"
+    class="row g-3 mt-1 border border-dark rounded p-2"
+    style="--bs-border-opacity: 0.5"
+    action="/student/createStudentDocumentUpload"
+    method="POST"
+  >
+    <div class="col-12 form-group">
+      <label for="photo" class="mb-2">Upload Passport Size Photo</label>
+      <input type="file" class="form-control-file" id="photo" name="photo" />
+    </div>
+
+    <div class="col-12 form-group">
+      <label for="signature" class="mb-2">Upload Signature on White Page</label>
+      <input
+        type="file"
+        class="form-control-file"
+        id="signature"
+        name="signature"
+      />
+    </div>
+    <div class="col-12 form-group">
+      <label for="resume" class="mb-2">Upload Resume</label><br />
+      <input type="file" class="form-control-file" id="resume" name="resume" />
+    </div>
+
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Upload</button>
+    </div>
+  </form>
+</div>
+
+<%} %>
